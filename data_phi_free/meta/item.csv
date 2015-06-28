@@ -1,4 +1,4 @@
-"ID","Label","MinValue","MinNonnegative","MaxValue"
+"iem_id","label","min","min_nonnegative","max"
 1,"SubjectID",1,1,1267501
 2,"ExtendedFamilyID",1,1,12686
 3,"Gender",-3,1,2
