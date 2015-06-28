@@ -2,7 +2,7 @@
 1,"SubjectID",1,1,1267501
 2,"ExtendedFamilyID",1,1,12686
 3,"Gender",-3,1,2
-5,"DateOfBirthMonth",-5,1,12
+6,"DateOfBirthMonth",-5,1,12
 7,"DateOfBirthYearGen1",-5,55,65
 8,"DateOfBirthYearGen2",-3,1970,2010
 9,"AgeAtInterviewDateYears",-5,13,53
