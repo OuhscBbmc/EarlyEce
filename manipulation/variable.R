@@ -42,6 +42,11 @@ ds <- ds_variable %>%
   dplyr::left_join(ds_extract_source, by="extract_source_id") %>%
   dplyr::filter(
     generation == 2
+  ) %>%
+  dplyr::mutate(
+    column_name_wide = ifelse(survey_year > 0,
+                              paste0(item, "_y_", survey_year),
+                              item)
   )
 
 ds$translate <- NULL
