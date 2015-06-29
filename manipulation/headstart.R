@@ -70,7 +70,7 @@ ds_subject <- ds_long %>%
     any_yes = any(headstart_ever),
     any_response = any(!is.na(headstart_ever))
   )
-table(ds_subject$ever_count)
+table(ds_subject$ever_count, useNA="always")
 sum(ds_subject$any_yes, na.rm=T)
 sum(ds_subject$any_response, na.rm=T)
 

@@ -349,12 +349,12 @@ ds_long$headstart_ever &lt;- as.logical(ds_long$headstart_ever)
     any_yes = any(headstart_ever),
     any_response = any(!is.na(headstart_ever))
   )
-table(ds_subject$ever_count)
+table(ds_subject$ever_count, useNA=&quot;always&quot;)
 </code></pre>
 
 <pre><code>## 
-##    0    1    2    3 
-## 9541 1289  560  122
+##    0    1    2    3 &lt;NA&gt; 
+## 9541 1289  560  122    0
 </code></pre>
 
 <pre><code class="r">sum(ds_subject$any_yes, na.rm=T)
@@ -410,7 +410,7 @@ packages used):</p>
 <pre><code class="r">Sys.time()
 </code></pre>
 
-<pre><code>## [1] &quot;2015-06-28 22:13:57 CDT&quot;
+<pre><code>## [1] &quot;2015-06-28 22:17:08 CDT&quot;
 </code></pre>
 
 </body>

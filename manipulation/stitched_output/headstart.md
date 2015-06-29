@@ -161,13 +161,13 @@ ds_subject <- ds_long %>%
     any_yes = any(headstart_ever),
     any_response = any(!is.na(headstart_ever))
   )
-table(ds_subject$ever_count)
+table(ds_subject$ever_count, useNA="always")
 ```
 
 ```
 ## 
-##    0    1    2    3 
-## 9541 1289  560  122
+##    0    1    2    3 <NA> 
+## 9541 1289  560  122    0
 ```
 
 ```r
@@ -234,6 +234,6 @@ Sys.time()
 ```
 
 ```
-## [1] "2015-06-28 22:13:57 CDT"
+## [1] "2015-06-28 22:17:08 CDT"
 ```
 
