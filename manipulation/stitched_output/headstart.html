@@ -345,7 +345,9 @@ ds_long$headstart_ever &lt;- as.logical(ds_long$headstart_ever)
 <pre><code class="r">ds_subject &lt;- ds_long %&gt;%
   dplyr::group_by_(&quot;subject_id&quot;) %&gt;%
   dplyr::summarize(
-    ever_count = sum(headstart_ever, na.rm=T)
+    ever_count = sum(headstart_ever, na.rm=T),
+    any_yes = any(headstart_ever),
+    any_response = any(!is.na(headstart_ever))
   )
 table(ds_subject$ever_count)
 </code></pre>
@@ -355,8 +357,20 @@ table(ds_subject$ever_count)
 ## 9541 1289  560  122
 </code></pre>
 
+<pre><code class="r">sum(ds_subject$any_yes, na.rm=T)
+</code></pre>
+
+<pre><code>## [1] 1971
+</code></pre>
+
+<pre><code class="r">sum(ds_subject$any_response, na.rm=T)
+</code></pre>
+
+<pre><code>## [1] 9410
+</code></pre>
+
 <pre><code class="r"># Save as a compress, binary R dataset.  It&#39;s no longer readable with a text editor, but it saves metadata (eg, factor information).
-saveRDS(ds_wide, file=path_output, compress=&quot;xz&quot;)
+# saveRDS(ds_wide, file=path_output, compress=&quot;xz&quot;)
 </code></pre>
 
 <p>The R session information (including the OS info, R version and all
@@ -390,13 +404,13 @@ packages used):</p>
 ## [17] git2r_0.10.1     rversions_1.0.1  lazyeval_0.1.10  digest_0.6.8    
 ## [21] assertthat_0.1   formatR_1.2      readr_0.1.1      reshape2_1.4.1  
 ## [25] curl_0.9         evaluate_0.7     memoise_0.2.1    stringi_0.5-2   
-## [29] scales_0.2.5     lubridate_1.3.3  proto_0.3-10
+## [29] scales_0.2.5     lubridate_1.3.3  markdown_0.7.7   proto_0.3-10
 </code></pre>
 
 <pre><code class="r">Sys.time()
 </code></pre>
 
-<pre><code>## [1] &quot;2015-06-28 22:03:19 CDT&quot;
+<pre><code>## [1] &quot;2015-06-28 22:13:57 CDT&quot;
 </code></pre>
 
 </body>

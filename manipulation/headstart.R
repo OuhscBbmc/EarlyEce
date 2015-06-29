@@ -66,9 +66,13 @@ ds_long$headstart_ever <- as.logical(ds_long$headstart_ever)
 ds_subject <- ds_long %>%
   dplyr::group_by_("subject_id") %>%
   dplyr::summarize(
-    ever_count = sum(headstart_ever, na.rm=T)
+    ever_count = sum(headstart_ever, na.rm=T),
+    any_yes = any(headstart_ever),
+    any_response = any(!is.na(headstart_ever))
   )
 table(ds_subject$ever_count)
+sum(ds_subject$any_yes, na.rm=T)
+sum(ds_subject$any_response, na.rm=T)
 
 # @knitr erase_artifacts ------------------------------
 
