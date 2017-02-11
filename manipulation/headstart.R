@@ -10,10 +10,10 @@ library(magrittr)
 library(tidyr)
 library(ggplot2)
 library(NlsyLinks) # devtools::install_github("LiveOak/NlsyLinks")
-requireNamespace("readr", quietly=TRUE)
-requireNamespace("dplyr", quietly=TRUE)
-requireNamespace("lubridate", quietly=TRUE)
-# requireNamespace("plyr", quietly=TRUE)
+requireNamespace("readr")
+requireNamespace("dplyr")
+requireNamespace("lubridate")
+# requireNamespace("plyr")
 
 # @knitr declare_globals ------------------------------
 path_input <- "./data_phi_free/raw/ece-headstart.csv"

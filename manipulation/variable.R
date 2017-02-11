@@ -8,8 +8,8 @@ rm(list=ls(all=TRUE))  #Clear the variables from previous runs.
 # @knitr load_packages ==============================
 library(magrittr)
 library(NlsyLinks) #devtools::install_github("LiveOak/NlsyLinks")
-requireNamespace("readr", quietly=TRUE)
-requireNamespace("dplyr", quietly=TRUE)
+requireNamespace("readr")
+requireNamespace("dplyr")
 
 # @knitr declare_globals ==============================
 path_item <- "./data_phi_free/meta/item.csv"
